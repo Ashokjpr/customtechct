@@ -15,7 +15,7 @@ function HomeC1() {
         <p className='fs-2 text-sky-300'>Industries We Serve</p>
         <p className='fw-bold'>Healthcare, eCommerce, CRM, HRMS, ATS, Wellness, B2B & B2C Platforms.</p>
       </div>
-      <button class="border  font-bold transition duration-300 ease-in-out px-4 py-2 bg-pink-500 hover:bg-pink-700  rounded">
+      <button className="border  font-bold transition duration-300 ease-in-out px-4 py-2 bg-pink-500 hover:bg-pink-700  rounded">
         <Link className='!no-underline text-white' to="/contact">Let's go</Link> </button>
 
 

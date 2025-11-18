@@ -24,7 +24,7 @@ function App() {
   }, []);
 
    return (
-    <div className=''>
+    <div >
      
       <Navbar />
       <Routes>
