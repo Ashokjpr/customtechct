@@ -8,7 +8,7 @@ function HomeC1() {
        <img src={Homec1bgpc} className='w-100 d-none d-md-block'  />
         <img src={Homec1bgmob} className='w-100  d-md-none'  />
       <div className='container position-absolute text-light  py-auto  pt-md-5 mt-md-5'>
-        <p className='fs-1 fw-bold mt-5 text-light '>Custom Web and Mobile App Development</p>
+        <p className='sm:text-2xl md:text-4xl fw-bold mt-5 text-light '>Custom Web and Mobile App Development</p>
         <p className='fw-bold'>At CustomTechLabs USA, we build scalable and performance-driven digital solutions.</p>
 
         <div className=" my-5">
