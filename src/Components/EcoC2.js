@@ -5,7 +5,7 @@ function EcoC2() {
   return (
     <div className='d-flex justify-content-center '>
         <img src={indc2bg} className='w-100 ' />
-      <div className='container position-absolute py-auto  pt-md-5 mt-5'>
+      <div className='container position-absolute py-auto  pt-md-5'>
         <p className="fs-1 fw-bold ">Service Offerings.</p>
         
         <div className='gap-4 d-flex flex-wrap justify-content-center'>

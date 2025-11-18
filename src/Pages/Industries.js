@@ -1,4 +1,5 @@
 import React from 'react'
+import Contact from '../Components/Conc1';
 import IndC1 from '../Components/IndC1'
 import IndC2 from '../Components/IndC2'
 function Industries() {
@@ -7,6 +8,7 @@ function Industries() {
     <div className="mt-5">
       <IndC1/>
       <IndC2/>
+      {/* <Contact/> */}
     </div>
   )
 }

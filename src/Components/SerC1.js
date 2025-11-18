@@ -13,7 +13,7 @@ function SerC1() {
                 <img src={Serc1bgmob} className='w-100 d-md-none' />
                 <div className='container position-absolute d-flex justify-content- text-light  py-auto '>
                     <div className='pt-5   mt-5  col-12 col-md-8'>
-                        <p className='fs-1 my-auto fw-bold   text-warning' data-aos="fade-down-left" >Drive operational excellence, innovation and transformation.</p>
+                        <p className='fs-1 my-auto fw-bold   text-blue-700' data-aos="fade-down-left" >Drive operational excellence, innovation and transformation.</p>
                     </div>
                    
                 </div>  

@@ -9,8 +9,8 @@ function SolC1() {
                 <img src={Solc1bgpc} className='w-100 d-none d-md-block'  />
                 <img src={Solc1bgmob} className='w-100  d-md-none'  />      
                 <div className='container position-absolute d-flex justify-content-start text-light  py-auto '>
-                    <div className='pt-md-5   mt-5  col-12 col-md-9'>
-                        <p className='fs-1 mt-md-5 fw-bold  ' data-aos="fade-up-left">We provide specialized digital solutions that simplify complex processes and accelerate growth.</p>
+                    <div className='pt-5   mt-5  col-11 col-md-9'>
+                        <p className=' text-2xl md:text-4xl mt-md-5 fw-bold  ' data-aos="fade-up-left">We provide specialized digital solutions that simplify complex processes and accelerate growth.</p>
                     </div>
                    
                 </div>
