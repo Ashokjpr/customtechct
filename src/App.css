@@ -36,3 +36,78 @@
     transform: rotate(360deg);
   }
 }
+
+
+.text-blue{
+   color: rgb(2, 2, 197);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(221, 9, 9, 0.1);
+}
+
+.customcard{
+  border-bottom: 2px solid rgb(1, 1, 104);
+  background-color: #fbfdfd;
+}
+
+.customcard h3{
+  color: rgb(1, 1, 104);
+}
+
+.customcard:hover {
+  transform: translateY(-10px);
+  transition: 0.3s ease;
+  box-shadow: 0 5px 20px rgba(12, 12, 12, 0.1);
+  background-color: rgb(1, 1, 104);
+  color:white;
+}
+
+.customcard:hover h3{
+  color:white;
+}
+
+.customcard:hover span{
+  transform: translateX(15px);
+  transition: 0.5s ease;
+}
+
+.helCard{
+  border: 1px solid rgb(1, 1, 104);
+}
+
+.helCard h3{
+  color: rgb(1, 1, 104);
+}
+
+.helCard h2{
+  color: rgb(3, 245, 193);
+  font-size: 2rem;
+}
+
+.heaul{
+  color: #ebf5b2;
+} 
+
+.helCard:hover {
+  box-shadow: 0 5px 20px rgba(12, 12, 12, 0.1);
+  background-color: rgb(1, 1, 104);
+  color:white;
+}
+.helCard:hover h3{
+  color:white;
+}
+
+.helCard:hover h2{
+  color:rgb(242, 4, 250);
+}
+
+.helCard:hover .heaul{
+  color:white;
+}
+
+
+
+
