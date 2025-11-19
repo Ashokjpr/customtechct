@@ -2,80 +2,91 @@ import React from 'react'
 import indc2bg from '../assets/images/indc2bg.png'
 
 function EcoC2() {
-  return (
-    <div className='d-flex justify-content-center '>
-        <img src={indc2bg} className='w-100 ' />
-      <div className='container position-absolute py-auto  pt-md-5'>
-        <p className="fs-1 fw-bold ">Service Offerings.</p>
-        
-        <div className='gap-4 d-flex flex-wrap justify-content-center'>
-            
-            <div className='hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2' style={{minWidth:"20rem"}} data-aos="ease-out " data-aos="zoom-in-up">
-                <h3 className='border-bottom'>Shopify Development</h3>
-                <ul>
-                    <li className='mb-2'>Custom Shopify theme development</li>
-                    <li className='mb-2'>App integration & automation</li>
-                    <li className='mb-2'>High-converting storefront design</li>
-                    <li className='mb-2'>Shopify migration & optimization</li>
-                </ul>
-            </div>        
-            <div className=' hover:scale-108  helCard shadow-lg rounded col-11 col-md-3 p-2' style={{minWidth:"20rem"}} data-aos="ease-out" data-aos="zoom-out-down">
-                <h3 className='border-bottom'>Custom Store Development</h3>
-                <ul>
-                    <li>Full-stack custom eCommerce solutions</li>
-                    <li>MERN / Laravel / Next.js store development</li>
-                    <li>Scalable architecture for large catalogs</li>
-                    <li>Custom admin dashboards & analytics</li>
-                    
-                </ul>
-            </div>
-            <div className='hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2' style={{minWidth:"20rem"}} data-aos="ease-out" data-aos="zoom-in-up">
-                <h3 className='border-bottom'>Advanced Product Search</h3>
-                <ul>
-                    <li>NLP-based keyword understanding</li>
-                    <li>Vector search for deeper matching</li>
-                    <li>ML models for recommendation engines</li>
-                    <li>Smart filters (price, category, brand, ratings, availability)</li>
-                    <li>Trending, popular & seasonal product insights</li>
-                    
-                </ul>
-            </div>
-            <div className='hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2' style={{minWidth:"20rem"}} data-aos="ease-out" data-aos="zoom-out-down">
-                <h3 className='border-bottom'>Secure Payment Gateway Integration</h3>
-                <ul>
-                    <li>Supports Stripe, PayPal, Razorpay, Paytm, and more.</li>
-                    <li>Encrypted, PCI-DSS–compliant payment processing.</li>
-                    <li>Multi-currency & multiple payment methods.</li>
-                    <li>Fraud protection & secure checkout.</li>
-                    <li>Smooth integration with APIs and webhooks.</li>
-                  
-                </ul>
-            </div>
-            <div className='hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2' style={{minWidth:"20rem"}}data-aos="ease-out" data-aos="zoom-in-up">
-                <h3 className='border-bottom'>Inventory, Order & Subscription Management</h3>
-                <ul>
-                    <li>Real-time inventory tracking & stock alerts.</li>
-                    <li>Automated order processing & fulfillment.</li>
-                    <li>Centralized order history & status updates.</li>
-                    <li>Subscription creation, renewal & billing automation.</li>
-                    <li>Seamless integration with payment gateways & CRMs.</li>
-                </ul>
-            </div>
-            <div className='hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2' style={{minWidth:"20rem"}}data-aos="ease-out" data-aos="zoom-out-down">
-                <h3 className='border-bottom'>Mobile App Integration (iOS & Android)</h3>
-                <ul>
-                    <li>Seamless integration with native and hybrid mobile apps.</li>
-                    <li>Real-time data syncing via APIs.</li>
-                    <li>Support for push notifications & in-app features.</li>
-                    <li>Secure authentication and user management.</li>
-                    <li>Optimized performance for both iOS and Android.</li>
-                </ul>
-            </div>
+    const serviceCards = [
+        {
+            title: "Custom Store Development",
+            items: [
+                "Full-stack custom eCommerce solutions",
+                "MERN / Laravel / Next.js store development",
+                "Scalable architecture for large catalogs",
+                "Custom admin dashboards & analytics",
+            ],
+        },
+        {
+            title: "Advanced Product Search",
+            items: [
+                "NLP-based keyword understanding",
+                "Vector search for deeper matching",
+                "ML models for recommendation engines",
+                "Smart filters (price, category, brand, ratings, availability)",
+                "Trending, popular & seasonal product insights",
+            ],
+        },
+        {
+            title: "Secure Payment Gateway Integration",
+            items: [
+                "Supports Stripe, PayPal, Razorpay, Paytm, and more.",
+                "Encrypted, PCI-DSS–compliant payment processing.",
+                "Multi-currency & multiple payment methods.",
+                "Fraud protection & secure checkout.",
+                "Smooth integration with APIs and webhooks.",
+            ],
+        },
+        {
+            title: "Inventory, Order & Subscription Management",
+            items: [
+                "Real-time inventory tracking & stock alerts.",
+                "Automated order processing & fulfillment.",
+                "Centralized order history & status updates.",
+                "Subscription creation, renewal & billing automation.",
+                "Seamless integration with payment gateways & CRMs.",
+            ],
+        },
+        {
+            title: "Mobile App Integration (iOS & Android)",
+            items: [
+                "Seamless integration with native and hybrid mobile apps.",
+                "Real-time data syncing via APIs.",
+                "Support for push notifications & in-app features.",
+                "Secure authentication and user management.",
+                "Optimized performance for both iOS and Android.",
+            ],
+        },
+    ];
 
+    const aosin = "zoom-in-up";
+    const aosout = "zoom-out-down";
+    return (
+        <div className='d-flex justify-content-center '>
+            <img src={indc2bg} className='w-100 ' />
+            <div className='container position-absolute py-auto  pt-md-5'>
+                <p className="fs-1 fw-bold ">Service Offerings.</p>
+
+                <div className="gap-4 d-flex flex-wrap justify-content-center">
+
+                    {serviceCards.map((card, index) => (
+                        <div
+                            key={index}
+                            className="hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2"
+                            style={{ minWidth: "20rem" }}
+                            data-aos={index % 2 === 0 ? aosin : aosout}
+                            data-aos-easing="ease-out"
+                        >
+                            <h3 className="border-bottom">{card.title}</h3>
+
+                            <ul>
+                                {card.items.map((item, i) => (
+                                    <li key={i}>{item}</li>
+                                ))}
+                            </ul>
+                        </div>
+                    ))}
+
+                </div>
+
+            </div>
         </div>
-      </div>
-    </div>
-  )
+    )
 }
 
 export default EcoC2

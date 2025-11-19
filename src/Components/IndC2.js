@@ -11,106 +11,108 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
-
 function IndC2() {
-    return (
-        <div className='d-flex justify-content-center '>
-            <img src={indc2bg}  className='h-100 ' />
-            <div className='container position-absolute rounded   my-5'>
-                <p className="fs-1 fw-bold ">Industries We Serve.</p>
-                <Swiper
-                    slidesPerView={1}
-                    spaceBetween={20}
-                    loop={true} // 🔁 Infinite scroll
-                    autoplay={{
-                        delay: 2500, // time between slides
-                        disableOnInteraction: false,
-                    }}
-                    pagination={{ clickable: true }}
-                    navigation={true}
-                    modules={[Pagination, Navigation, Autoplay]}
-                    breakpoints={{
-                        768: { slidesPerView: 1 },  // Tablet
-                        992: { slidesPerView: 2 },  // Desktop
-                    }}
-                    className="mySwiper text-primary mb-5"
-                >
-                    <SwiperSlide>
-                      <div className='d-flex helCard shadow-lg rounded'>
-                        <img src={Healthcaremob} className='w-100  '  />  
-                        <div className='container position-absolute fw-bold  mt-md-5 p-4  px-auto'>
-                          <h2 className='border-bottom '>Healthcare</h2>
-                          <p className='text-xl md:text-3xl leading-tight'>Key Healthcare Solutions:</p>
-                            <ul className='heaul leading-tight'>
-                                <li className='md:text-2xl'>Custom EMAR Software Development</li>
-                                <li className='md:text-2xl'>Pharmacy Management Platforms</li>
-                                <li className='md:text-2xl'>Medicine Search & Inventory Systems</li>
-                                <li className='md:text-2xl'>Appointment and Patient Tracking Portals</li>
-                                <li className='md:text-2xl'>Healthcare Staff Coordination Apps</li>
-                              </ul>
-                        </div>
-                      </div>
-                    </SwiperSlide>
 
-                    <SwiperSlide>
-                         <div className='d-flex helCard shadow-lg rounded'>
-                       <img src={ECommerce} className='w-100  '  /> 
-                        <div className='container position-absolute fw-bold  leading-tight mt-md-5 p-4  px-auto'>
-                          <h2 className='border-bottom'>E-Commerce</h2>
-                            <p className='text-xl md:text-3xl'>Core Capabilities:</p>
-                            <ul className='heaul'>
-                                <li className='  md:text-2xl'>Custom Store Development</li>
-                                <li className='  md:text-2xl'>Advanced Product Search & Recommendation Systems</li>
-                                <li className='  md:text-2xl'>Secure Payment Gateway Integration</li>
-                                <li className='  md:text-2xl'>Inventory, Order & Subscription Management</li>
-                                <li className='  md:text-2xl'>Mobile App Integration (iOS & Android)</li>
-                                
-                            </ul>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+  const industrySlides = [
+    {
+      image: Healthcaremob,
+      title: "Healthcare",
+      subtitle: "Key Healthcare Solutions:",
+      items: [
+        "Custom EMAR Software Development",
+        "Pharmacy Management Platforms",
+        "Medicine Search & Inventory Systems",
+        "Appointment and Patient Tracking Portals",
+        "Healthcare Staff Coordination Apps",
+      ],
+    },
+    {
+      image: ECommerce,
+      title: "E-Commerce",
+      subtitle: "Core Capabilities:",
+      items: [
+        "Custom Store Development",
+        "Advanced Product Search & Recommendation Systems",
+        "Secure Payment Gateway Integration",
+        "Inventory, Order & Subscription Management",
+        "Mobile App Integration (iOS & Android)",
+      ],
+    },
+    {
+      image: Otherindc,
+      title: "Other Industries",
+      subtitle: "Our Core Services Include:",
+      items: [
+        "Wellness & Fitness Applications",
+        "Learning & Quiz Platforms",
+        "B2B and B2C Portals",
+        "SaaS & Automation Systems",
+        "Maintenance and Post-Launch Support",
+      ],
+    },
+    {
+      image: Services,
+      title: "Services",
+      subtitle: "Our Core Services Include:",
+      items: [
+        "Custom Web and Mobile App Development",
+        "AI-driven Product Engineering",
+        "Cloud and API Integration",
+        "UI/UX Design and Digital Experience Optimization",
+        "Enterprise Solutions for Web, iOS, and Android",
+        "Maintenance and Post-Launch Support",
+      ],
+    },
+  ];
 
-                    <SwiperSlide>
-                         <div className='d-flex helCard shadow-lg rounded text center'>
-                        <img src={Otherindc} className='w-100  '  /> 
-                        <div className='container position-absolute fw-bold   leading-tight mt-md-5 p-4  px-auto'>
-                          <h2 className='border-bottom'>Other Industries</h2>
-                            <p className='text-xl md:text-3xl '>Our Core Services Include:</p>
-                            <ul className='heaul'>
-                                <li className='  md:text-2xl'>Wellness & Fitness Applications</li>
-                                <li className='  md:text-2xl'>Learning & Quiz Platforms</li>
-                                <li className='  md:text-2xl'>B2B and B2C Portals</li>
-                                <li className='  md:text-2xl'>SaaS & Automation Systems</li>
-                                <li className='  md:text-2xl'>Maintenance and Post-Launch Support</li>
-                            </ul>
-                        </div>
-                      </div>
-                    </SwiperSlide>
+  return (
+    <div className='d-flex justify-content-center'>
+      <img src={indc2bg} className='h-100' />
 
-                    <SwiperSlide>
-                         <div className='d-flex helCard shadow-lg rounded text center'>
-                        <img src={Services} className='w-100  '  /> 
-                        <div className='container position-absolute fw-bold   leading-tight mt-md-5 p-4  px-auto'>
-                          <h2 className='border-bottom'>Services</h2>
-                            <p className='text-xl md:text-3xl'>Our Core Services Include:</p>
-                            <ul className='heaul'>
-                                <li className='  md:text-2xl'>Custom Web and Mobile App Development</li>
-                                <li className='  md:text-2xl'>AI-driven Product Engineering</li>
-                                <li className='  md:text-2xl'>Cloud and API Integration</li>
-                                <li className='  md:text-2xl'>UI/UX Design and Digital Experience Optimization</li>
-                                <li className='  md:text-2xl'>Enterprise Solutions for Web, iOS, and Android</li>
-                                <li className='  md:text-2xl'>Maintenance and Post-Launch Support</li>
-                            </ul>
-                        </div>
-                      </div>
-                    </SwiperSlide>
-                </Swiper>
+      <div className='container position-absolute rounded my-5'>
+        <p className="fs-1 fw-bold">Industries We Serve.</p>
 
-            </div>
-        </div>
+        <Swiper
+          slidesPerView={1}
+          spaceBetween={20}
+          loop={true} // 🔁 Infinite scroll
+          autoplay={{
+            delay: 2500, // time between slides
+            disableOnInteraction: false,
+          }}
+          pagination={{ clickable: true }}
+          navigation={true}
+          modules={[Pagination, Navigation, Autoplay]}
+          breakpoints={{
+            768: { slidesPerView: 1 },  // Tablet
+            992: { slidesPerView: 2 },  // Desktop
+          }}
+          className="mySwiper text-primary mb-5"
+          >
 
+          {industrySlides.map((slide, index) => (
+            <SwiperSlide key={index}>
+              <div className='d-flex helCard shadow-lg rounded position-relative'>
+                <img src={slide.image} className='w-100' />
 
-    )
+                <div className='container position-absolute fw-bold mt-md-5 p-4 px-auto'>
+                  <h2 className='border-bottom'>{slide.title}</h2>
+                  <p className='text-xl md:text-3xl'>{slide.subtitle}</p>
+
+                  <ul className='heaul leading-tight'>
+                    {slide.items.map((item, i) => (
+                      <li key={i} className='md:text-2xl'>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </SwiperSlide>
+          ))}
+
+        </Swiper>
+      </div>
+    </div>
+  );
 }
 
-export default IndC2
+export default IndC2;

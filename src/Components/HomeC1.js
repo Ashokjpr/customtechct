@@ -7,15 +7,15 @@ function HomeC1() {
     <div className='d-flex justify-content-center '>
        <img src={Homec1bgpc} className='w-100 d-none d-md-block'  />
        <img src={Homec1bgmob} className='w-100  d-md-none'  />
-      <div className='container position-absolute text-light  py-auto  pt-md-5 mt-md-5'>
-        <p className='text-2xl md:text-5xl fw-bold mt-3 md:mt-5 text-pink-400 '>Custom Web and Mobile App Development</p>
-        <p className='fw-bold'>At CustomTechLabs USA, we build scalable and performance-driven digital solutions.</p>
+      <div className='container position-absolute text-light  py-auto  pt-md-5 mt-md-5 '>
+        <p className='text-2xl md:text-5xl fw-bold mt-3 md:mt-5 text-pink-400'data-aos="fade-up-left">Custom Web and Mobile App Development</p>
+        <p className='fw-bold'data-aos="zoom-in-up">At CustomTechLabs USA, we build scalable and performance-driven digital solutions.</p>
 
         <div className=" md:my-5 ">
-        <p className='fs-2 text-sky-300'>Industries We Serve</p>
-        <p className='fw-bold'>Healthcare, eCommerce, CRM, HRMS, ATS, Wellness, B2B & B2C Platforms.</p>
+        <p className='fs-2 text-sky-200'data-aos="fade-up-left">Industries We Serve</p>
+        <p className='fw-bold'data-aos="zoom-in-up">Healthcare, eCommerce, CRM, HRMS, ATS, Wellness, B2B & B2C Platforms.</p>
       </div>
-      <button className="border  font-bold transition duration-300 ease-in-out px-4 py-2 bg-pink-500 hover:bg-pink-700  rounded">
+      <button className="border  font-bold transition duration-300 ease-in-out px-4 py-2 bg-pink-500 hover:bg-pink-700  rounded" data-aos="zoom-in-up">
         <Link className='!no-underline text-white' to="/contact">Let's go</Link> </button>
 
 

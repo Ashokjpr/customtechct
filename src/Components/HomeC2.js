@@ -23,9 +23,9 @@ export default function HomeC2() {
   return (
       <div className="min-h-screen  py-16 px-6 md:px-16">
       <div className="max-w-4xl mx-auto text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-800">
+        <p className="text-4xl md:text-5xl font-bold text-blue-900">
           Advanced eCommerce Development
-        </h1>
+        </p>
         <p className="text-gray-600 mt-4 text-lg">
           We build custom digital commerce platforms designed for performance,
           flexibility, and long-term growth. With our end-to-end development
@@ -36,15 +36,15 @@ export default function HomeC2() {
 
       {/* Core Features */}
       <div className="max-w-5xl mx-auto mt-16">
-        <h2 className="text-3xl font-semibold text-gray-800">
+        <p className="text-3xl font-semibold text-blue-900 ">
           Core Features
-        </h2>
+        </p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {coreFeatures.map((item, index) => (
             <div data-aos="zoom-in-up"
               key={index}
-              className="flex items-start gap-3 p-4 bg-white shadow rounded-xl font-bold"
+              className="flex items-start gap-3 p-4 bg-white shadow rounded-xl font-bold md:mb-4 "
             >
               <CheckCircle className="w-6 h-6 text-blue-600" />
               <p className="text-gray-700">{item}</p>
@@ -55,15 +55,15 @@ export default function HomeC2() {
 
       {/* Advanced Modules */}
       <div className="max-w-5xl mx-auto mt-16">
-        <h2 className="text-3xl font-semibold text-gray-800">
+        <p className="text-3xl font-semibold text-blue-900">
           Advanced Modules
-        </h2>
+        </p>
 
         <div className="mt-6 grid grid-cols-1 md:grid-cols-2 gap-6">
           {advancedModules.map((item, index) => (
             <div data-aos="zoom-in-up"
               key={index}
-              className="flex items-start gap-3 p-4 bg-white shadow rounded-xl font-bold"
+              className="flex items-start gap-3 p-4 bg-white shadow rounded-xl font-bold md:mb-4"
             >
               <CheckCircle className="w-6 h-6 text-green-600" />
               <p className="text-gray-700">{item}</p>
