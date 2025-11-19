@@ -6,7 +6,7 @@ function HomeC1() {
   return (
     <div className='d-flex justify-content-center '>
        <img src={Homec1bgpc} className='w-100 d-none d-md-block'  />
-        <img src={Homec1bgmob} className='w-100  d-md-none'  />
+       <img src={Homec1bgmob} className='w-100  d-md-none'  />
       <div className='container position-absolute text-light  py-auto  pt-md-5 mt-md-5'>
         <p className='text-2xl md:text-5xl fw-bold mt-3 md:mt-5 text-pink-400 '>Custom Web and Mobile App Development</p>
         <p className='fw-bold'>At CustomTechLabs USA, we build scalable and performance-driven digital solutions.</p>

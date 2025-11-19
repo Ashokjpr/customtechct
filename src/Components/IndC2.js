@@ -59,7 +59,7 @@ function IndC2() {
                           <h2 className='border-bottom'>E-Commerce</h2>
                             <p className='text-xl md:text-3xl'>Core Capabilities:</p>
                             <ul className='heaul'>
-                                <li className='  md:text-2xl'>Shopify, WooCommerce & Custom Store Development</li>
+                                <li className='  md:text-2xl'>Custom Store Development</li>
                                 <li className='  md:text-2xl'>Advanced Product Search & Recommendation Systems</li>
                                 <li className='  md:text-2xl'>Secure Payment Gateway Integration</li>
                                 <li className='  md:text-2xl'>Inventory, Order & Subscription Management</li>
@@ -77,7 +77,6 @@ function IndC2() {
                           <h2 className='border-bottom'>Other Industries</h2>
                             <p className='text-xl md:text-3xl '>Our Core Services Include:</p>
                             <ul className='heaul'>
-                                <li className='  md:text-2xl'>CRM, HRMS, and ATS Platforms</li>
                                 <li className='  md:text-2xl'>Wellness & Fitness Applications</li>
                                 <li className='  md:text-2xl'>Learning & Quiz Platforms</li>
                                 <li className='  md:text-2xl'>B2B and B2C Portals</li>

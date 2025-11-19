@@ -12,6 +12,7 @@ import ECommerce from './Pages/ECommerce';
 import Services from './Pages/Services';
 import Solutions from './Pages/Solutions';
 import Contact from './Pages/Contact';
+import NotFound from "./Pages/NotFound";
 function App() {
   
     useEffect(() => {
@@ -25,7 +26,6 @@ function App() {
 
    return (
     <div >
-     
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
@@ -34,7 +34,8 @@ function App() {
         <Route path='/ecommerce'  element={<ECommerce/>}/>
         <Route path="/services" element={<Services />} />
         <Route path="/solutions" element={<Solutions />} />
-        <Route path="/contact" element={<Contact />} /> 
+        <Route path="/contact" element={<Contact />} />
+        <Route path="*" element={<NotFound />} /> 
       </Routes>
     
     </div>

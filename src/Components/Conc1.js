@@ -32,7 +32,7 @@ function Conc1() {
 
             backgroundImage: `url(${Contbg})`,
             backgroundSize: "cover",
-            // backgroundPosition: "center",
+            backgroundPosition: "center",
         }} >
 
           <div className='container mt-5'>
