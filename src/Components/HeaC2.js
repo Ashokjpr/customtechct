@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
 import indc2bg from '../assets/images/indc2bg.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -7,7 +8,26 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
-function HeaC2() {
+function HeaC2(props) {
+  const pagename= props.pagename;
+
+  
+    const [HealthcareData, setHealthcareData] = useState([]);
+      
+        //   Fetch data 
+        useEffect(() => {
+          axios
+            .get(`http://localhost:5000/api/pages/carddata/${pagename}`) 
+            .then((res) => {
+              const Data=res.data;// assuming API returns array
+              setHealthcareData(Data);
+            })
+            .catch((err) => {
+              console.log("Error fetching C1 data", err);
+            });
+        }, []);
+   
+        // console.log(HealthcareData)
 
   const healthcareCards = [
     {
@@ -77,7 +97,7 @@ function HeaC2() {
       <img src={indc2bg} className='w-100' />
 
       <div className='container position-absolute my-5'>
-        <p className="fs-1 fw-bold">Healthcare Solutions.</p>
+        <p className="fs-1 fw-bold">{props.subtitle}</p>
 
         <Swiper
           slidesPerView={1}
@@ -97,12 +117,12 @@ function HeaC2() {
           className="mySwiper"
         >
 
-          {healthcareCards.map((card, index) => (
+          {HealthcareData?.map((card, index) => (
             <SwiperSlide key={index}>
               <div className='helCard shadow-lg rounded p-3'>
                 <h3 className='border-bottom'>{card.title}</h3>
                 <ul>
-                  {card.items.map((item, i) => (
+                  {card.points.map((item, i) => (
                     <li key={i} className='mb-4'>{item}</li>
                   ))}
                 </ul>

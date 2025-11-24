@@ -1,8 +1,26 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
 import indc2bg from '../assets/images/indc2bg.png'
 
-function SerC2() {
+function SerC2(props) {
+  const pagename= props.pagename;
 
+  const [ServicesCardData, setServicesCardData] = useState([]);
+    
+      //   Fetch data 
+      useEffect(() => {
+        axios
+          .get(`http://localhost:5000/api/pages/carddata/${pagename}`) 
+          .then((res) => {
+            const Data=res.data;// assuming API returns array
+            setServicesCardData(Data);
+          })
+          .catch((err) => {
+            console.log("Error fetching C1 data", err);
+          });
+      }, []);
+ 
+      // console.log(ServicesCardData)
   const serviceCards = [
     {
       title: "Custom Web and Mobile App Development",
@@ -36,14 +54,15 @@ function SerC2() {
     </svg>
   );
 
+  // console.log(typeof(ServicesCardData))
   return (
     <div className='d-flex justify-content-center'>
       <img src={indc2bg} className='w-100' />
 
       <div className='container position-absolute py-auto'>
         <div className='justify-content-center'>
-
-          {serviceCards.map((card, index) => (
+          {ServicesCardData?.map((card, index) => (
+            
             <div key={index} className='customcard d-flex flex-wrap shadow-lg p-3 my-5' data-aos="zoom-in-up">
 
               <div className='m-auto col-11 col-md-3'>
@@ -51,7 +70,7 @@ function SerC2() {
               </div>
 
               <div className='d-flex my-auto col-12 col-md-9'>
-                <p>{card.desc}</p>
+                <p>{card.points}</p>
                 <span className='col-2 text-center my-auto'>{ArrowIcon}</span>
               </div>
 

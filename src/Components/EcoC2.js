@@ -1,7 +1,29 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
 import indc2bg from '../assets/images/indc2bg.png'
 
-function EcoC2() {
+function EcoC2(props) {
+
+    const pagename= props.pagename;
+      
+        
+          const [SolutionsData, setSolutionsData] = useState([]);
+            
+              //   Fetch data 
+              useEffect(() => {
+                axios
+                  .get(`http://localhost:5000/api/pages/carddata/${pagename}`) 
+                  .then((res) => {
+                    const Data=res.data;// assuming API returns array
+                    setSolutionsData(Data);
+                  })
+                  .catch((err) => {
+                    console.log("Error fetching C1 data", err);
+                  });
+              }, []);
+         
+              // console.log(SolutionsData)
+
     const serviceCards = [
         {
             title: "Custom Store Development",
@@ -60,11 +82,11 @@ function EcoC2() {
         <div className='d-flex justify-content-center '>
             <img src={indc2bg} className='w-100 ' />
             <div className='container position-absolute py-auto  pt-md-5'>
-                <p className="fs-1 fw-bold ">Service Offerings.</p>
+                <p className="fs-1 fw-bold ">{props.subtitle}</p>
 
                 <div className="gap-4 d-flex flex-wrap justify-content-center">
 
-                    {serviceCards.map((card, index) => (
+                    {SolutionsData?.map((card, index) => (
                         <div
                             key={index}
                             className="hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2"
@@ -75,7 +97,7 @@ function EcoC2() {
                             <h3 className="border-bottom">{card.title}</h3>
 
                             <ul>
-                                {card.items.map((item, i) => (
+                                {card.points.map((item, i) => (
                                     <li key={i}>{item}</li>
                                 ))}
                             </ul>

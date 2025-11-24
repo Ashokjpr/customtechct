@@ -1,6 +1,7 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
 import indc2bg from '../assets/images/indc2bg.png'
-import Healthcaremob from '../assets/images/healthcaremob.png'
+import Healthcare from '../assets/images/healthcaremob.png'
 import ECommerce from '../assets/images/ecommerce.png'
 import Otherindc from '../assets/images/otherind.png'
 import Services from '../assets/images/services.png'
@@ -11,11 +12,12 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
-function IndC2() {
+function IndC2(props) {
+  const pagename = props.pagename;
 
   const industrySlides = [
     {
-      image: Healthcaremob,
+      image: Healthcare,
       title: "Healthcare",
       subtitle: "Key Healthcare Solutions:",
       items: [
@@ -65,12 +67,29 @@ function IndC2() {
     },
   ];
 
+  const [IndustriesData, setIndustriesData] = useState([]);
+      
+        //   Fetch data 
+        useEffect(() => {
+          axios
+            .get(`http://localhost:5000/api/pages/${pagename}`) 
+            .then((res) => {
+              const Data=res.data;// assuming API returns array
+              setIndustriesData(Data);
+            })
+            .catch((err) => {
+              console.log("Error fetching C1 data", err);
+            });
+        }, []);
+   
+        // console.log(IndustriesData)
+
   return (
     <div className='d-flex justify-content-center'>
       <img src={indc2bg} className='h-100' />
 
       <div className='container position-absolute rounded my-5'>
-        <p className="fs-1 fw-bold">Industries We Serve.</p>
+        <p className="fs-1 fw-bold">{props.subtitle}</p>
 
         <Swiper
           slidesPerView={1}
@@ -90,17 +109,17 @@ function IndC2() {
           className="mySwiper text-primary mb-5"
           >
 
-          {industrySlides.map((slide, index) => (
+          {IndustriesData?.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className='d-flex helCard shadow-lg rounded position-relative'>
-                <img src={slide.image} className='w-100' />
+                <img src={Healthcare} className='w-100' />
 
                 <div className='container position-absolute fw-bold mt-md-5 p-4 px-auto'>
-                  <h2 className='border-bottom'>{slide.title}</h2>
-                  <p className='text-xl md:text-3xl'>{slide.subtitle}</p>
+                  <h2 className='border-bottom'>{slide?.title}</h2>
+                  <p className='text-xl md:text-3xl'>{slide?.keytitle}</p>
 
                   <ul className='heaul leading-tight'>
-                    {slide.items.map((item, i) => (
+                    {slide.points.map((item, i) => (
                       <li key={i} className='md:text-2xl'>{item}</li>
                     ))}
                   </ul>

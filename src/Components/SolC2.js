@@ -1,7 +1,28 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
+import axios from 'axios';
 import indc2bg from '../assets/images/indc2bg.png'
 
-function SolC2() {
+function SolC2(props) {
+
+  const pagename= props.pagename;
+  
+    
+      const [SolutionsData, setSolutionsData] = useState([]);
+        
+          //   Fetch data 
+          useEffect(() => {
+            axios
+              .get(`http://localhost:5000/api/pages/carddata/${pagename}`) 
+              .then((res) => {
+                const Data=res.data;// assuming API returns array
+                setSolutionsData(Data);
+              })
+              .catch((err) => {
+                console.log("Error fetching C1 data", err);
+              });
+          }, []);
+     
+          // console.log(SolutionsData)
 
   const solutionCards = [
     {
@@ -43,7 +64,7 @@ function SolC2() {
       <div className='container position-absolute py-auto mt-5'>
         <div className='justify-content-center'>
 
-          {solutionCards.map((card, index) => (
+          {SolutionsData.map((card, index) => (
             <div key={index} className='customcard d-flex flex-wrap shadow-lg p-3 my-5' data-aos="zoom-in-up">
 
               <div className='my-auto col-12 col-md-3'>
@@ -51,7 +72,7 @@ function SolC2() {
               </div>
 
               <div className='d-flex my-auto col-12 col-md-9'>
-                <p>{card.desc}</p>
+                <p>{card.points}</p>
                 <span className='col-2 text-center my-auto'>{ArrowIcon}</span>
               </div>
 

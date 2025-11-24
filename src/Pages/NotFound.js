@@ -1,18 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 export default function NotFound() {
   return (
-    <div className="h-screen flex flex-col items-center justify-center text-center p-6">
-      <p className="text-7xl  text-red-800">404</p>
-      <p className="text-xl text-gray-600 mt-4">Oops! Page not found.</p>
+    <div className="auth-page-wrapper py-5 mt-10 d-flex justify-content-center align-items-center min-vh-100">
 
-      <Link 
-        to="/" 
-        className="mt-6 px-6 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition"
-      >
-        Go Home
-      </Link>
+      <div className="auth-page-content overflow-hidden p-0">
+        <div className="container">
+          <div className="row justify-content-center">
+            <div className="col-xl-7 col-lg-8">
+              <div className="text-center">
+                <img
+                  src="http://127.0.0.1:8000/assets/images/error400-cover.png"
+                  alt="error img"
+                  className="img-fluid"
+                />
+
+                <div className="mt-3">
+                  <h3 className="text-uppercase">Sorry, Page not Found 😭</h3>
+                  <p className="text-muted mb-4">
+                    The page you are looking for not available!
+                  </p>
+
+                  <a href="/" className="btn btn-success">
+                    <i className="mdi mdi-home me-1"></i> Back to home
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   );
 }
