@@ -12,7 +12,7 @@ function Services() {
     //   Fetch data 
     useEffect(() => {
       axios
-        .get(`http://localhost:5000/api/pages/textdata/${pagename}`) 
+        .get(`https://ctlabsbackend.vercel.app/api/pages/textdata/${pagename}`) 
         .then((res) => {
           const Data=res.data[0];// assuming API returns array
           setServicesData(Data);

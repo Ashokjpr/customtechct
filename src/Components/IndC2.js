@@ -72,7 +72,7 @@ function IndC2(props) {
         //   Fetch data 
         useEffect(() => {
           axios
-            .get(`http://localhost:5000/api/pages/${pagename}`) 
+            .get(`https://ctlabsbackend.vercel.app/api/pages/${pagename}`) 
             .then((res) => {
               const Data=res.data;// assuming API returns array
               setIndustriesData(Data);

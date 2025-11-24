@@ -9,7 +9,7 @@ function HomeC1() {
 //   Fetch data 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/pages/homec1") 
+      .get("https://ctlabsbackend.vercel.app/api/pages/homec1") 
       .then((res) => {
         const Data=res.data[0];// assuming API returns array
         setHomec1Data(Data);

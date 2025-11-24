@@ -17,7 +17,7 @@ function HeaC2(props) {
         //   Fetch data 
         useEffect(() => {
           axios
-            .get(`http://localhost:5000/api/pages/carddata/${pagename}`) 
+            .get(`https://ctlabsbackend.vercel.app/api/pages/carddata/${pagename}`) 
             .then((res) => {
               const Data=res.data;// assuming API returns array
               setHealthcareData(Data);

@@ -8,7 +8,7 @@ export default function HomeC2() {
   //   Fetch data 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/api/pages/homec2") 
+      .get("https://ctlabsbackend.vercel.app/api/pages/homec2") 
       .then((res) => {
         const Data=res.data[0];// assuming API returns array
         setHomec2Data(Data);
