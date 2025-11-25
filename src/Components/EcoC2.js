@@ -7,7 +7,7 @@ function EcoC2(props) {
     const pagename= props.pagename;
       
         
-          const [SolutionsData, setSolutionsData] = useState([]);
+          const [ECommerceData, setECommerceData] = useState([]);
             
               //   Fetch data 
               useEffect(() => {
@@ -15,14 +15,14 @@ function EcoC2(props) {
                   .get(`https://ctlabsbackend.vercel.app/api/pages/carddata/${pagename}`) 
                   .then((res) => {
                     const Data=res.data;// assuming API returns array
-                    setSolutionsData(Data);
+                    setECommerceData(Data);
                   })
                   .catch((err) => {
                     console.log("Error fetching C1 data", err);
                   });
               }, []);
          
-              // console.log(SolutionsData)
+              // console.log(ECommerceData)
 
     const serviceCards = [
         {
@@ -86,7 +86,7 @@ function EcoC2(props) {
 
                 <div className="gap-4 d-flex flex-wrap justify-content-center">
 
-                    {SolutionsData?.map((card, index) => (
+                    {ECommerceData?.map((card, index) => (
                         <div
                             key={index}
                             className="hover:scale-108 helCard shadow-lg rounded col-11 col-md-3 p-2"
