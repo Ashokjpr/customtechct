@@ -6,8 +6,8 @@ function HeaC1(props) {
     return (
         <div>
             <div className='d-flex justify-content-center pt-3'>
-                <img src={Heac1bgpc} className='w-100 d-none d-md-block' />
-                <img src={Heac1bgmob} className='w-100 d-md-none' />
+                <img src={`${props.desktopbg}`} className='w-100 d-none d-md-block'  />
+                <img src={`${props.mobilebg}`} className='w-100  d-md-none'  />
                 <div className='container position-absolute d-flex text-light  py-auto md:pt-20 pt-10  items-center'>
                     <div className='slide-up my-auto  col-12 col-md-10  '>
                         <p className=' text-2xl md:text-4xl lg:text-5xl text-pink-500  fw-bold 'data-aos="fade-down-left">{props.title}</p>

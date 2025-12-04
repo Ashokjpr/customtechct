@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Contbg from '../assets/images/contbg.png'
-
+import axios from 'axios';
 function Conc1() {
     const [formData, setFormData] = useState({
         firstName: "",
@@ -21,15 +21,22 @@ function Conc1() {
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log(formData);
-        alert("Form Submitted Successfully!");
-    };
+    const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      await axios.post("https://ctlabsbackend.vercel.app/api/pages/contact", formData);
+
+      setFormData({firstName: "",lastName: "",email: "",phone: "",company: "", message: "", updates: false,agree: false,});
+      alert("Form Submitted Successfully!");
+    } catch (error) {
+      console.log(error);
+      alert("Form Submitted  Failed!");
+    }
+  };
 
     return (
         <div className='d-flex  ' style={{
-
             backgroundImage: `url(${Contbg})`,
             backgroundSize: "cover",
             backgroundPosition: "center",

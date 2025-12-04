@@ -13,8 +13,8 @@ import 'swiper/css/navigation';
 import { Pagination, Navigation, Autoplay } from 'swiper/modules';
 
 function IndC2(props) {
-  const pagename = props.pagename;
-
+  const pagename = props?.pagename;
+  console.log(pagename)
   const industrySlides = [
     {
       image: Healthcare,
@@ -76,13 +76,14 @@ function IndC2(props) {
             .then((res) => {
               const Data=res.data;// assuming API returns array
               setIndustriesData(Data);
+              console.log(Data)
             })
             .catch((err) => {
               console.log("Error fetching C1 data", err);
             });
         }, []);
    
-        // console.log(IndustriesData)
+        console.log(IndustriesData)
 
   return (
     <div className='d-flex justify-content-center'>
@@ -112,7 +113,7 @@ function IndC2(props) {
           {IndustriesData?.map((slide, index) => (
             <SwiperSlide key={index}>
               <div className='d-flex helCard shadow-lg rounded position-relative'>
-                <img src={Healthcare} className='w-100' />
+                <img src={`${slide.image}`} className='w-100' />
 
                 <div className='container position-absolute fw-bold mt-md-5 p-4 px-auto'>
                   <h2 className='border-bottom'>{slide?.title}</h2>
